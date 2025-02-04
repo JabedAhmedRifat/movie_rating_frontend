@@ -2,7 +2,7 @@
 
 export class API {
     static loginUser(body){
-        return fetch(`http://127.0.0.1:8000/auth/`, {
+        return fetch(`https://ahmed101.pythonanywhere.com/auth/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export class API {
     } 
 
     static registerUser(body){
-        return fetch(`http://127.0.0.1:8000/api/users/`, {
+        return fetch(`https://ahmed101.pythonanywhere.com/api/users/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ export class API {
     } 
 
     static getMovies(token) {
-      return fetch("http://127.0.0.1:8000/api/movies/", {
+      return fetch("https://ahmed101.pythonanywhere.com/api/movies/", {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export class API {
 
 
     static updateMovie(mov_id, body, token){
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`https://ahmed101.pythonanywhere.com/api/movies/${mov_id}/`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export class API {
     } 
 
     static createMovie(body, token){
-      return fetch(`http://127.0.0.1:8000/api/movies/`, {
+      return fetch(`https://ahmed101.pythonanywhere.com/api/movies/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export class API {
   }
 
   static deleteMovie(mov_id, token){
-    return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`,{
+    return fetch(`https://ahmed101.pythonanywhere.com/api/movies/${mov_id}/`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
