@@ -3,7 +3,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
-import  { HashRouter as Router , Route, Routes } from 'react-router-dom';
+import  { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Auth from './components/auth';
 import { CookiesProvider } from 'react-cookie';
 
@@ -13,12 +13,12 @@ function Root(){
 
         const routing = (
         <CookiesProvider>
-            <Router>
+            <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Auth/>}/>
                 <Route path="/movies" element= {<App/>}/>
               </Routes>
-            </Router>
+            </BrowserRouter>
           </CookiesProvider>
         );
         return routing;
