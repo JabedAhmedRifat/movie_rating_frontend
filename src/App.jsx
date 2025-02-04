@@ -31,7 +31,9 @@ function App() {
   // }
 
   useEffect( () =>{
-          if (!token['mr-token']) window.location.href= '/'
+          if (!token || !token['mr-token']) {
+            window.location.href= '/';
+          }
       }, [token])
 
 
@@ -87,7 +89,7 @@ function App() {
   }
 
   if (loading) return <h1>Loading...</h1>
-  if (error) return <h1>{error}</h1>
+  if (error) return <h1>error loading movies</h1>
   return (  
       <div className="App">
         <header className="App-header">

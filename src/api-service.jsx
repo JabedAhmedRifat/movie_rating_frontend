@@ -8,7 +8,13 @@ export class API {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(body) 
-          }).then(resp => resp.json())
+          }).then (resp => {
+              if (!resp.ok) {
+                throw new Error("login failed")
+
+              }
+              return resp.json()
+          })
     } 
 
     static registerUser(body){

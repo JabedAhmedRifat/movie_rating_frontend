@@ -7,6 +7,7 @@ function Auth(){
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ isLoginView, setIsLoginView] = useState(true);
+    const [ error, setError ] = useState(null);
 
     const [token, setToken] = useCookies(['mr-token'])
 
@@ -17,15 +18,23 @@ function Auth(){
 
 
     const loginClicked = () => {
+        setError(null);
         API.loginUser({username, password})
-            .then( resp => setToken('mr-token',resp.token))
-            .catch ( error => console.log(error))
+            .then( resp => {
+                if (resp.token) {
+                    setToken('mr-token',resp.token);
+                } else {
+                    setError("username or password doesnot match")
+                }
+                })
+            .catch ( error => setError("username or password doesnot match"));
     }
 
     const registerClicked  = () => {
+        setError(null);
         API.registerUser({username, password})
             .then( resp => loginClicked())
-            .catch(error => console.log(error))
+            .catch(error => setError("registration Failed"))
 
     }
 
@@ -39,6 +48,8 @@ function Auth(){
         </header>
             
             <div className="login-container">
+                {error && <p>{error}</p> }
+
                 <label htmlFor="username">Username</label><br/>
                 <input id ="username" type="text" placeholder="username" value={username}
                     onChange={ evt => setUsername(evt.target.value)}/>
