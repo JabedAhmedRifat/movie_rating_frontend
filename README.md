@@ -1,5 +1,8 @@
 # Movie Rating App
 
+## Live 
+https://movie-rating-frontend-chi.vercel.app/
+
 ## Overview
 Movie Rating App is a web-based platform that allows users to browse, rate, and manage movies. It features user authentication, movie listing, rating functionality, and movie management capabilities.
 
@@ -72,9 +75,7 @@ Ensure you have the following installed:
    npm run dev
    ```
 
-## Deployment
 
-```
 
 ## Troubleshooting
 ### Common Issues & Fixes
