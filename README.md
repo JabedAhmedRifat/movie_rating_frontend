@@ -86,9 +86,5 @@ Ensure you have the following installed:
 ## Contribution
 Feel free to fork this repository and submit pull requests.
 
-## License
-MIT License
 
----
-Made with ❤️ by [Jabed Ahmed]
 
